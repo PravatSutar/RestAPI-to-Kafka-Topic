@@ -1,7 +1,5 @@
 # RestAPI-to-Kafka-Topic
-This Spring Boot application consumes the JSON data from the Rest API end-point and push the data to the Kafka Topic for the REAL-TIME data analytics
-
-
+This Spring Boot application consumes the JSON data from the Rest API end-point and push the data to the Kafka Topic for the REAL-TIME data analytics. THis detailed setup steps of ZOOKEEPER and Kafka defined here are for the window system.
 
 Build the project through command prompt
 --------------------------------------------
@@ -11,7 +9,7 @@ Run the application - 
 <Project Home Dir>java -jar target/RestToKafkaUtility-1.0-SNAPSHOT.jar
 
 The application will keep on running and consume the data from the rest api end-point on every 7 seconds.
-
+Note: Before running the application, start the Zookeeper and Kafka; the steps are defined below.
 
 Setup Zookeeper in Window
 -------------------------------------------
@@ -34,8 +32,11 @@ Download Apache Kafka from http://kafka.apache.org/downloads.html ​<br>
 Extract the .tar file using 7-zip or WinRAR. For the demonstration, the extracted file is kept at C:\analytics\kafka_2.11-2.3.0​
 log.dir=C:\analytics\kafka_2.11-2.3.0\kafka-logs.​<br>
 Leave the other configuration as is.​<br>
+
 Apache Kafka will run on default port 9092 and connect to ZooKeeper’s default port, 2181.​<br>
+
 Edit the default log directory path defined in "server.properties" at C:\analytics\kafka_2.11-2.3.0\config​<br>
+
 Note: If the ZooKeeper is running on other node or cluster, then edit “zookeeper.connect:2181” to your custom IP and port. As part of this demonstration, both Zookeeper and Kafka are running in the same system adn there's no need to change the IP and PORT. The Kafka port and broker.id are configurable in this file. Leave other settings as is​.<br>
 
 Start Kafka Server<br>
